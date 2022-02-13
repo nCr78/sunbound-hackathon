@@ -1,5 +1,5 @@
 <ion-content fullscreen="true" class="ion-padding" scroll-y="false">
-  <ion-slides>
+  <ion-slides #slides>
     <ion-slide>
       <div class="slide">
         <img class="slideImage" src="./assets/sunbound.png" alt="logo" />
@@ -22,14 +22,24 @@
       <img class="slideImage big" src="./assets/images/find_route_image.webp" alt="-" />
       <div class="forceBottom">
         <h2>Ready to join us?</h2>
-        <ion-button href="./register?mode=handicapped" routerDirection="forward">
-          <div>Join as handicapped</div>
+        <ion-button routerLink="/register" routerDirection="forward">
+          <div>Join as physically challenged</div>
         </ion-button>
 
-        <ion-button href="./register?mode=volunteer" routerDirection="forward" routerAnimation="fade">
+        <ion-button routerLink="/register" routerDirection="forward">
           <div>Join as volunteer</div>
         </ion-button>
       </div>
     </ion-slide>
   </ion-slides>
+  <ion-fab class="backButton">
+    <ion-fab-button (click)="slides.slidePrev()">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab class="nextButton">
+    <ion-fab-button (click)="slides.slideNext()">
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

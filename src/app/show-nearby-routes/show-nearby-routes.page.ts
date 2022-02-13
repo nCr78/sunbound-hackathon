@@ -39,7 +39,6 @@ export class ShowNearbyRoutesPage implements OnInit, OnDestroy {
         Object.values(div.getClientRects()).forEach(r => console.log(r));
         this.clientHeight = rect.height - 44 - 7;
         this.clientWidth = rect.width;
-        this.initMarkers();
       }, 1);
     }
   }
@@ -52,24 +51,28 @@ export class ShowNearbyRoutesPage implements OnInit, OnDestroy {
     this.googleMapRef = null;
   }
 
-  initMarkers() {
+  initMarkers(gMap) {
+    this.googleMapRef = gMap;
     this.sub = this.dataSrv.getPublicRoutes().subscribe((res: RouteModel[]) => {
       res.forEach((routeData, index) => {
-        const newMarker = new google.maps.Marker({
+        let newMarker = new google.maps.Marker({
           position: routeData.start,
           map: this.googleMapRef.googleMap,
-          draggable: true,
           label: {
             color: 'white',
             text: '' + (index + 1)
           }
         });
         newMarker.addListener('click', (e) => {
-          newMarker.setOpacity(0);
           this.createRouteFromMarkerPositions(routeData);
+          newMarker.setPosition(null);
+          newMarker.setMap(null);
+          newMarker = null;
+          this.markers = [];
         });
         this.markers.push(newMarker);
       });
+      this.sub.unsubscribe();
     });
   }
 

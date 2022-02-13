@@ -48,8 +48,17 @@ ion-button {
 
   .forceBottom {
     width: 99%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
   }
+}
+
+.backButton {
+  position: fixed;
+  bottom: 1.2rem;
+  left: 1rem;
+}
+
+.nextButton {
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1rem;
 }

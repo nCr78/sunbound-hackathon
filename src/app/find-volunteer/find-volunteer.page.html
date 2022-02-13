@@ -15,13 +15,13 @@
             Duration
           </ion-label>
           <ion-select placeholder="Select Duration" interface="action-sheet">
-            <ion-select-option value="mute_15">For 15 Minutes</ion-select-option>
-            <ion-select-option value="mute_15">For 30 Minutes</ion-select-option>
-            <ion-select-option value="mute_15">For 45 Minutes</ion-select-option>
-            <ion-select-option value="mute_1">For 1 Hour</ion-select-option>
-            <ion-select-option value="mute_1">For 1.5 Hour</ion-select-option>
-            <ion-select-option value="mute_23">For 2 Hours</ion-select-option>
-            <ion-select-option value="mute_inf">I will contact the amount of time</ion-select-option>
+            <ion-select-option value="15">For 15 Minutes</ion-select-option>
+            <ion-select-option value="30">For 30 Minutes</ion-select-option>
+            <ion-select-option value="45">For 45 Minutes</ion-select-option>
+            <ion-select-option value="1h">For 1 Hour</ion-select-option>
+            <ion-select-option value="1.5h">For 1.5 Hour</ion-select-option>
+            <ion-select-option value="2h">For 2 Hours</ion-select-option>
+            <ion-select-option value="contact">I will contact the amount of time</ion-select-option>
           </ion-select>
         </ion-item>
         <ion-item>
@@ -36,7 +36,7 @@
       <ion-icon name="chevron-back-outline"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <ion-fab class="sendButton" (click)="createFindVolunteerRequest()">
+  <ion-fab class="sendButton" (click)="createFindVolunteerRequest()" routerLink="/tabs/tab1" routerDirection="back">
     <ion-fab-button color="success">
       <ion-icon name="send-outline"></ion-icon>
     </ion-fab-button>

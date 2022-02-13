@@ -7,7 +7,7 @@
 
   <div #myDiv class="container">
     <google-map #gMap
-                (tilesloaded)="googleMapRef = gMap"
+                (tilesloaded)="initMarkers(gMap)"
                 [height]="clientHeight"
                 [width]="clientWidth"
                 [options]="options">
