@@ -1,0 +1,52 @@
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Profile</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-card class="coworker-card">
+      <ion-card-content>
+        <ion-list lines="none">
+          <ion-avatar class="ion-margin-start profilePicture">
+            <img src="/assets/images/demo-guy.jpg" alt="none"/>
+          </ion-avatar>
+          <ion-card-title>
+            John Parks
+          </ion-card-title>
+          <ion-card-subtitle>Verified</ion-card-subtitle>
+          <img src="/assets/images/paralyzed-handicapped-person.png" alt="none" class="header-img transparentBackground"/>
+          <ion-item>
+            <ion-icon name="call" slot="start"></ion-icon>
+            <ion-label>
+              <h2>(+30) 69 123-456-78</h2>
+              <p>Mobile phone</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="mail" slot="start"></ion-icon>
+            <ion-label>
+              <h2>jparks@mindunit.com</h2>
+              <p>E-mail</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-icon name="location" slot="start"></ion-icon>
+            <ion-label>
+              <h2>Nea Ionia, Merimnioti 78</h2>
+              <p>1st floor</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+        <div class="divider"></div>
+        <div class="actionButtons">
+          <ion-button size="big">Edit my details</ion-button>
+          <ion-button size="big">Request verification</ion-button>
+          <ion-button size="big" color="danger" (click)="logout()">LOGOUT</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+</ion-content>

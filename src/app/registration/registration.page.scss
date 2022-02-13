@@ -1,0 +1,36 @@
+.parentContainer {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 100%;
+  background: white;
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .pGray {
+    padding: 0 1rem 1rem;
+    color: grey;
+    text-align: center;
+  }
+
+  ion-button {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    width: 90%;
+
+    span {
+      width: 100%;
+    }
+  }
+
+  h2 {
+    color: black;
+  }
+}

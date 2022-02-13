@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="false" scrollY="false">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Show nearby routes</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div #myDiv class="container">
+    <google-map #gMap
+                (tilesloaded)="googleMapRef = gMap"
+                [height]="clientHeight"
+                [width]="clientWidth"
+                [options]="options">
+    </google-map>
+  </div>
+  <ion-fab class="backButton" routerLink="/findNewRoute" routerDirection="back">
+    <ion-fab-button>
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

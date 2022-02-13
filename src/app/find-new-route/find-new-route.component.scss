@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: 100%;
+
+  p {
+    color: gray;
+  }
+
+  ion-list {
+    width: 100%;
+    text-align: left;
+
+    ion-avatar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid lightgray;
+      color: gray;
+    }
+
+    ion-button {
+      color: black;
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      width: 100%;
+      --padding-start: 0;
+
+      ion-label {
+        width: calc(100% - 48px - 24px - 0.5rem);
+        text-align: left;
+        padding-left: 0.5rem;
+      }
+    }
+  }
+
+  ion-button {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    width: 90%;
+
+    span {
+      width: 100%;
+    }
+  }
+}
+
+.backButton {
+  position: fixed;
+  bottom: 1.2rem;
+  left: 1rem;
+}
+
+.ratingContainer {
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+
+  .circle {
+    border: 1px solid lightgray;
+    border-radius: 100%;
+    padding: 0.5rem;
+
+    .rating {
+      color: grey;
+    }
+  }
+
+  .star {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}

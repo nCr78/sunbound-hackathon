@@ -1,0 +1,15 @@
+.backButton {
+  position: fixed;
+  bottom: 1.2rem;
+  left: 1rem;
+}
+
+.sendButton {
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1rem;
+
+  ion-icon {
+    color: white;
+  }
+}

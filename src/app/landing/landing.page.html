@@ -1,0 +1,35 @@
+<ion-content fullscreen="true" class="ion-padding" scroll-y="false">
+  <ion-slides>
+    <ion-slide>
+      <div class="slide">
+        <img class="slideImage" src="./assets/sunbound.png" alt="logo" />
+        <h2>Welcome</h2>
+        <p>
+          <b>Sunbound</b> is a free app where you can setup an account as a volunteer or handicapped and have the ability to either offer or ask for help in commuting around the city.
+        </p>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <img class="slideImage" src="./assets/images/find_volunteer_image.jpg" alt="volunteering"/>
+      <h2>Helping the community</h2>
+      <p>
+        <b>Sunbound</b> connects handicapped people with volunteers for mobility assistance through matchmaking. We also enable both to create best accessibility routes.
+      </p>
+    </ion-slide>
+
+    <ion-slide class="relative">
+      <img class="slideImage big" src="./assets/images/find_route_image.webp" alt="-" />
+      <div class="forceBottom">
+        <h2>Ready to join us?</h2>
+        <ion-button href="./register?mode=handicapped" routerDirection="forward">
+          <div>Join as handicapped</div>
+        </ion-button>
+
+        <ion-button href="./register?mode=volunteer" routerDirection="forward" routerAnimation="fade">
+          <div>Join as volunteer</div>
+        </ion-button>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

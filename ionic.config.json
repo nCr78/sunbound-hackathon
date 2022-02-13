@@ -1,0 +1,8 @@
+{
+  "name": "Sunbound",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "0a68e68d"
+}

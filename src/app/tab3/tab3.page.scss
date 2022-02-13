@@ -1,0 +1,48 @@
+ion-card {
+  position: relative;
+
+  .profilePicture {
+    margin: 0 auto;
+  }
+
+  ion-card-title {
+    text-align: center;
+  }
+
+  ion-card-subtitle {
+    text-align: center;
+    color: #53afff;
+    user-select: none;
+  }
+
+  .transparentBackground {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    z-index: 1;
+    opacity: 0.1;
+    height: 100%;
+    right: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  ion-list {
+    ion-item {
+      z-index: 0;
+    }
+  }
+
+  .divider {
+    height: 1px;
+    background: lightgray;
+    width: 100%;
+    margin-top: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .actionButtons {
+    display: flex;
+    flex-flow: column;
+  }
+}

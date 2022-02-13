@@ -1,0 +1,133 @@
+<div class="main-div">
+  <h1 class="title">Welcome back!</h1>
+  <h2 class="subtitle">STAY MOBILE</h2>
+  <ion-card>
+    <div [style.display]="showSpinner ? '' : 'none'" class="spinnerDiv">
+      <ion-spinner name="crescent"></ion-spinner>
+    </div>
+    <ion-card-header>
+      <ion-card-title>
+        <img *ngIf="!isForgotPasswordModeSuccess && !isResetPasswordModeSuccess"
+             class="logo" src="assets/sunbound.png" alt="logo with disabled person">
+        <ion-icon *ngIf="isForgotPasswordModeSuccess || isResetPasswordModeSuccess" color="primary">check_circle</ion-icon>
+      </ion-card-title>
+      <ion-card-subtitle>
+        <ng-container
+          *ngIf="!isForgotPasswordMode && !isResetPasswordMode && !isForgotPasswordModeSuccess && !isResetPasswordModeSuccess">
+          LOGIN
+        </ng-container>
+        <ng-container *ngIf="isForgotPasswordMode && !isForgotPasswordModeSuccess">FORGOT PASSWORD</ng-container>
+        <ng-container *ngIf="isForgotPasswordModeSuccess || isResetPasswordModeSuccess">SUCCESS</ng-container>
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+
+      <form [hidden]="isForgotPasswordMode || isResetPasswordMode" [formGroup]="loginFormGroup">
+        <table class="formTable">
+          <tr>
+            <td>
+              <ion-item>
+                <ion-label position="floating">Username
+
+                </ion-label>
+                <ion-input (change)="fixAutoFill($event, pwd.value)" formControlName="username"
+                         name="username" placeholder="Username"></ion-input>
+                <!-- <ion-error *ngIf="loginFormGroup.controls.username.invalid"> -->
+                  <!-- {{getErrorMessageEmail(loginFormGroup.controls.username)}}
+                </ion-error> -->
+              </ion-item>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input #pwd formControlName="password" name="password" placeholder="Password" type="password"></ion-input>
+                <!-- <mat-error *ngIf="loginFormGroup.controls.password.invalid">{{usernameAndPasswordError()}}</mat-error> -->
+              </ion-item>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <ion-button (click)="login()" class="loginBtn" color="primary"  type="submit">Login</ion-button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="afterLogin">
+                <div class="grayLink"></div>
+                <div (click)="isForgotPasswordMode = true" class="grayLink">Forgot password</div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </form>
+
+      <!-- Forgot Password Form -->
+      <div *ngIf="isForgotPasswordMode">
+        <div *ngIf="!isForgotPasswordModeSuccess">
+          <ion-item>
+            <ion-label position="floating">E-mail</ion-label>
+            <ion-input [formControl]="forgotPassword" placeholder="E-mail"></ion-input>
+<!--            <mat-error *ngIf="forgotPassword.invalid">{{getErrorMessageEmail(forgotPassword)}}</mat-error>-->
+          </ion-item>
+          <div class="forgotPasswordButtons">
+            <ion-button (click)="sendPasswordResetEmail(forgotPassword.value)"
+                    [disabled]="forgotPassword.invalid"
+                    color="primary">
+              Send password reset link
+            </ion-button>
+            <ion-button (click)="isForgotPasswordMode = false">Back</ion-button>
+          </div>
+        </div>
+        <div *ngIf="isForgotPasswordModeSuccess">
+          <div>
+            <h2>E-mail sent successfully!</h2>
+            <p class="grayP">If you can't find the e-mail, please check you're using the correct e-mail address and also check your spam folder.</p>
+          </div>
+          <div class="forgotPasswordButtons">
+            <ion-button (click)="isForgotPasswordMode = false; isForgotPasswordModeSuccess = false">
+              Back to login
+            </ion-button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reset Password Form -->
+      <div *ngIf="isResetPasswordMode">
+        <div *ngIf="!isResetPasswordModeSuccess">
+          <ion-item>
+            <ion-label position="floating">New password</ion-label>
+            <input [formControl]="newPassword" placeholder="New password" type="password">
+            <!--            <mat-error *ngIf="newPassword.invalid">{{getPasswordErrorMessage()}}</mat-error>-->
+          </ion-item>
+          <ion-item>
+            <ion-label position="floating">Repeat new password</ion-label>
+            <input [formControl]="newRePassword" placeholder="Repeat new password" type="password">
+<!--            <mat-error *ngIf="newRePassword.invalid">{{getRePasswordErrorMessage()}}</mat-error>-->
+          </ion-item>
+          <div class="forgotPasswordButtons">
+            <ion-button (click)="confirmPasswordReset(newPassword.value)"
+                    [disabled]="newPassword.invalid || newRePassword.invalid"
+                    color="primary">
+              Reset my password
+            </ion-button>
+            <ion-button (click)="isResetPasswordMode = false">Back</ion-button>
+          </div>
+        </div>
+        <div *ngIf="isResetPasswordModeSuccess">
+          <div>
+            <h2>Password was reset successfully!</h2>
+            <p class="grayP">You may proceed to the login page.</p>
+          </div>
+          <div class="forgotPasswordButtons">
+            <ion-button (click)="isResetPasswordMode = false; isResetPasswordModeSuccess = false">
+              Back to login
+            </ion-button>
+          </div>
+        </div>
+      </div>
+
+    </ion-card-content>
+  </ion-card>
+</div>

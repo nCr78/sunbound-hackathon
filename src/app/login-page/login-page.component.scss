@@ -1,0 +1,170 @@
+.main-div {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  background: linear-gradient(110deg, #4b80c0 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, #3c4c5d 66%, #f5cb4c 66%);
+  //background: linear-gradient(110deg, #f4c333 33%, rgba(0, 0, 0, 0) 33%), linear-gradient(110deg, #5ab3e2 66%, #3c4c5d 66%);
+
+  .logo {
+    height: 4rem;
+    outline: none;
+    cursor: pointer;
+    padding-right: 2rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: 550;
+    letter-spacing: 0;
+    color: white;
+    margin-bottom: 0;
+  }
+
+  .subtitle {
+    font-size: 0.7rem;
+    font-weight: 50;
+    letter-spacing: 3px;
+    line-height: 1;
+    color: lightgrey;
+    margin-top: 0.15rem;
+    margin-bottom: 3vh;
+  }
+}
+
+.loginBtn {
+  width: 100%;
+  height: 38px;
+  font-size: 12px;
+  background-color: #2987cd;
+  color:#fff;
+  font-family: Roboto,Helvetica Neue,sans-serif;
+  border-radius: 11px;
+  text-transform: capitalize;
+}
+
+.afterLogin {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding-top: 1rem;
+
+  .grayLink {
+    color: grey;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-align: center;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+.spinnerDiv {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: -16px !important;
+  background-color: #ffffffbf;
+  z-index: 900;
+  border-radius: 4px;
+}
+
+ion-spinner {
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #ff0000;
+}
+
+ion-card {
+  width: 90%;
+  max-width: 20rem;
+  margin-bottom: 2rem;
+  background: #fff;
+  color: rgba(0,0,0,.87);
+
+  ion-card-subtitle {
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: rgba(0,0,0,.54);
+    margin-bottom: 0;
+    text-align: center;
+    font-family:Roboto,Helvetica Neue,sans-serif ;
+  }
+
+  ion-card-header {
+    justify-content: center;
+    text-align: center;
+
+    ion-icon {
+      height: 6rem;
+      width: 6rem;
+      font-size: 6rem;
+    }
+  }
+
+  ion-card-content {
+
+    .formTable {
+      width: 100%;
+    }
+
+    ion-item {
+      background: white;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      --border-color: grey;
+      --padding-start: 0.5rem;
+      // border-bottom: 1px solid #dedede !important;
+
+
+      ion-input {
+        --padding-top: 7px;
+        --padding-bottom: 0px;
+        --padding-start: -3;
+        padding: 0.4375em 0;
+        // animation: cdk-text-field-autofill-end 0s 1ms;
+      }
+    }
+
+    .forgotPasswordButtons {
+      display: flex;
+      justify-content: center;
+      flex-flow: column;
+
+      button {
+        margin-top: 0.5rem;
+        // color:#fff;
+      }
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .grayP {
+      color: grey;
+      font-size: 0.9rem;
+      text-align: justify;
+    }
+  }
+}
+.afterLogin .grayLink {
+  color: grey;
+  font-size: 11px;
+  cursor: pointer;
+  text-align: center;
+}

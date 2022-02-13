@@ -1,0 +1,68 @@
+<ion-content [fullscreen]="false">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Select a route</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="container">
+    <ion-button routerLink="/showNearbyRoutes" size="large" expand="block">
+      <ion-icon slot="start" name="navigate-outline"></ion-icon>
+      <span>Find route nearby</span>
+    </ion-button>
+    <ion-button routerLink="/createNewRoute" routerDirection="forward" fill="outline">Create a route</ion-button>
+    <!-- https://getavataaars.com -->
+    <ion-list>
+      <ion-list-header>Route History</ion-list-header>
+      <ion-item>
+        <ion-button size="full" fill="clear">
+          <ion-avatar slot="start">
+  <!--          <div class="ratingContainer">-->
+  <!--            <div class="circle">-->
+  <!--              <span class="rating">1</span>-->
+  <!--            </div>-->
+  <!--            <div class="star">-->
+  <!--              <ion-icon name="star-outline"></ion-icon>-->
+  <!--            </div>-->
+  <!--          </div>-->
+            <ion-icon name="map-outline"></ion-icon>
+          </ion-avatar>
+          <ion-label>
+            <h2>Near Zografou</h2>
+            <p>Friday 11:52, 2 hours & 7 min</p>
+          </ion-label>
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-button size="full" fill="clear">
+          <ion-avatar slot="start">
+            <ion-icon name="map-outline"></ion-icon>
+          </ion-avatar>
+          <ion-label>
+            <h2>Syntagma Square</h2>
+            <p>Tuesday 17:23, 1 hour & 2 min</p>
+          </ion-label>
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-item>
+        <ion-button size="full" fill="clear">
+          <ion-avatar slot="start">
+            <ion-icon name="map-outline"></ion-icon>
+          </ion-avatar>
+          <ion-label>
+            <h2>Near Piraeus</h2>
+            <p>Monday 10:29, 1 hour & 31 min</p>
+          </ion-label>
+          <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </div>
+  <ion-fab class="backButton" routerLink="/tabs/tab1" routerDirection="back">
+    <ion-fab-button>
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

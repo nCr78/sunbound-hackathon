@@ -1,0 +1,41 @@
+<ion-content [fullscreen]="false" scrollY="false">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Create a route</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div #myDiv class="container">
+    <google-map #gMap
+                (tilesloaded)="googleMapRef = gMap"
+                [height]="clientHeight"
+                [width]="clientWidth"
+                [options]="options">
+    </google-map>
+  </div>
+  <ion-fab class="backButton" routerLink="/findNewRoute" routerDirection="back">
+    <ion-fab-button>
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab class="addButton" (click)="dropMarkerAtCurrentLocation()">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab class="createRouteButton" (click)="createRouteFromMarkerPositions()">
+    <ion-fab-button color="success">
+      <ion-icon name="walk-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab *ngIf="showingRoute" class="saveRouteButton" (click)="saveRouteToDatabase()">
+    <ion-fab-button color="secondary">
+      <ion-icon name="save-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab class="deleteRouteButton" (click)="deleteRouteAndMarkers()">
+    <ion-fab-button color="danger">
+      <ion-icon name="trash-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-content>
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Find a volunteer</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="container">
+    <form>
+      <ion-list>
+        <ion-item>
+          <ion-datetime></ion-datetime>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">
+            Duration
+          </ion-label>
+          <ion-select placeholder="Select Duration" interface="action-sheet">
+            <ion-select-option value="mute_15">For 15 Minutes</ion-select-option>
+            <ion-select-option value="mute_15">For 30 Minutes</ion-select-option>
+            <ion-select-option value="mute_15">For 45 Minutes</ion-select-option>
+            <ion-select-option value="mute_1">For 1 Hour</ion-select-option>
+            <ion-select-option value="mute_1">For 1.5 Hour</ion-select-option>
+            <ion-select-option value="mute_23">For 2 Hours</ion-select-option>
+            <ion-select-option value="mute_inf">I will contact the amount of time</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label position="stacked">Notes</ion-label>
+          <ion-textarea></ion-textarea>
+        </ion-item>
+      </ion-list>
+    </form>
+  </div>
+  <ion-fab class="backButton" routerLink="/tabs/tab1" routerDirection="back">
+    <ion-fab-button>
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-fab class="sendButton" (click)="createFindVolunteerRequest()">
+    <ion-fab-button color="success">
+      <ion-icon name="send-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
